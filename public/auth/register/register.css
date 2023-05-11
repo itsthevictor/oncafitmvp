@@ -1,0 +1,149 @@
+body{
+    background: var(--background);
+}
+
+.container { 
+    /* background: var(--itemback); */
+    height:100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+.card {
+    width: 350px;
+    color: var(--text);
+    padding: 45px;
+    background-color: var(--itemback);
+    margin: auto;
+    position: absolute;
+   
+    border-radius: 5px;
+    border: 1px solid #28ca9f;
+  }
+
+
+.el-title{
+    margin-bottom: 22.5px;
+    word-wrap: normal;
+}
+
+.input-child{
+    margin-bottom: 22.5px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-between;
+}
+
+input{
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    width: 100%;
+}
+
+button{
+    font-size: 1rem;
+    font-weight: 550;
+    cursor: pointer;
+    border: none;
+    padding: 10px 15px 10px 15px;
+    border-radius: 5px;
+}
+
+.hidden{
+    display: none;
+}
+
+
+.b-login{
+    color: var(--background);
+    background-color: var(--accent);
+    /* border: 1px solid #28ca9f; */
+}
+
+.b-signup{
+    background-color: var(--background);
+    color: var(--accent
+    );
+}
+
+.option{
+    display: flex;
+    flex-direction: row;
+    
+    align-items: center;
+    justify-content: space-around;
+}
+
+.buttons{
+width:100%;
+margin-bottom: 22.5px;
+}
+
+.signup-button{
+width:100%;
+	color: var(--background);
+    background-color: var(--accent);
+    /* border: 1px solid #28ca9f; */
+}
+
+.login-button{
+    width:100%;
+        color: var(--background);
+        background-color: var(--accent);
+        /* border: 1px solid #28ca9f; */
+    }
+
+
+a{
+color:var(--accent);
+text-decoration: none;
+}
+
+
+.switch, .le-switch{
+    display: inline-block;
+    background-color: var(--itemback);
+    border: none;
+    padding: 0;
+    color:var(--accent);
+    text-decoration: none;
+}
+
+@media screen and (max-width: 720px) {
+    body{
+        background: var(--itemback) !important;
+    }
+    .card {
+        border: none
+      }
+  }
+.error-message{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0.25rem;
+    width: auto;
+    text-align: center;
+    background: rgb(227, 193, 198);
+    color: rgb(159, 33, 33);
+    border-radius: 5px;
+}
+
+.success-message{
+    
+    padding: 0.25rem;
+    width: auto;
+    text-align: center;
+    background: rgb(193, 227, 211);
+    color: var(--iteminactive);
+    border-radius: 5px;
+   
+}

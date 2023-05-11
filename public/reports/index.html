@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="reports.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/css/main.css">
+ 
+ 
+ <title>Reports</title>
+</head>
+<body >
+ <div class="container">
+  <div class="title">
+   <h2>Let's talk Progress!</h2>
+  
+  </div>
+  <div >
+   <div class="card1 card">
+    <canvas id="firstChart"style></canvas>
+   </div>
+   <div class="card2 card">
+   
+   </div>
+   <div class="card3 card">
+    <canvas id="secondChart" style></canvas>
+   </div>
+   <div class="card4 card">
+    
+   </div>
+  </div>
+  <div class="spacer"></div>
+ </div>
+ <div class="navbar">
+  <div class="navbar-items">
+   <div><button class="home logout" title="Your Challenges" onclick="location.href=`/`"><i
+      class="fa-solid fa-clipboard-list"></i></button></div>
+   <div><button class="profile logout" title="Your Profile" onclick="updateProfile()"><i
+      class="fa-solid fa-user"></i></button></div>
+      <div><button class="reports logout" title="Reports" onclick="updateProfile()"><i class="fa-solid fa-chart-line"></i></button></div>
+   <div><button class="info logout" title="About this app" onclick="location.href=`/info`"><i
+      class="fa-sharp fa-regular fa-circle-question "></i></button></div>
+   <div><button class="logout" title="Log out" onclick="logOut()"><i
+      class="fa-sharp fa-solid fa-power-off "></i></button></div>
+  </div>
+ 
+ 
+ 
+ </div>
+
+ 
+
+
+
+
+<script src="https://kit.fontawesome.com/d711adfb58.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"
+ integrity="sha512-zInFF17qBFVvvvFpIfeBzo7Tj7+rQxLeTJDmbxjBz5/zIr89YVbTNelNhdTT+/DCrxoVzBeUPVFJsczKbB7sew=="
+ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ <script src="reports.js"></script>
+</body>
+</html>

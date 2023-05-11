@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rep Counter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <div class="container">
+      <header>
+        <div class="title">
+          <h2></h2>
+        </div>
+        <div class="done">
+          <button class="done-btn hidden" onclick="location.href=`/`">done</button>
+        </div>
+      </header>
+
+        <div class="progress-bar">
+            <div class="circular-progress">
+              <span class="prog"><i class="fa-solid fa-bolt"></i></span>
+            </div>
+            <!-- <span class="prog-text">Progress</span> -->
+            <div class="canvas hidden">
+              <canvas id="summaryChart"style="width:100%"></canvas>
+            </div>
+        </div>
+        <div class="bind">
+          <div class="hud">
+            <div class="volume child">
+              <div class="child-content ch1">
+                <p id="h-volume">0</p>
+                <label for="h-volume">Volume</label>
+              </div>
+            </div>
+            <div class="weight child x">
+              <div class="child-content ch2">
+                <p id="h-weight">0</p>
+                <label for="h-weight">Weight</label>
+              </div>
+            </div>
+            <div class="sets-done child ">
+              <div class="child-content ch3">
+                <p id="h-sets">0</p>
+                <label for="h-sets">Sets</label>
+              </div>
+            </div>
+            <div class="reps-done child ">
+              <div class="child-content ch4">
+                <p id="h-reps">0</p>
+                <label for="h-reps">Reps</label>
+              </div>
+            </div>
+          </div>
+          <div class="counter-box">
+            <div class="box-child b1">
+              <div id="set">Set 1</div>
+            </div>
+            <div class="box-child b2">
+              <input type="number" placeholder="reps" id="input">
+            </div>
+            <div class="box-child b3">
+              <button type="submit" id="btn">LOG</button>
+            </div>
+          </div>
+          <div class="summary hidden">
+          </div>
+        </div>
+    </div>
+      <script src="https://kit.fontawesome.com/d711adfb58.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="reps.js"></script>
+    
+</body>
+</html>

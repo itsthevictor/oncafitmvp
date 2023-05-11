@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Create challenge</title>
+ <link rel="stylesheet" href="createChallenge.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<section>
+ <div class="container">
+   <form>
+
+    
+    <div class="step step-1 active ">
+     <div class="title">
+      <h2>Choose a workout type</h2>
+     </div>
+     <div class="parent parent-1">
+      <div class="option-1 option">
+       <button type="button" class="option-btn">Push</button>
+      </div>
+      <div class="option-2 option">
+       <button type="button" class="option-btn">Pull</button>
+      </div>
+     
+    
+      <div class="option-3 option">
+       <button type="button" class="option-btn">Legs</button>
+      </div>
+      <div class="option-4 option">
+       <button type="button" class="option-btn">Core</button>
+      </div>
+     </div>    
+    </div>
+    <div class="step step-2  ">
+      <div class="title">
+        <h2>Choose your exercise</h2>
+      </div>
+    <div class="workouts">
+      <div class="push-ups group">
+        <div class="push-ups beginner">
+          <div class="group category">Beginner</div>
+            <div class="beginner-box box">
+              
+            </div>
+        </div>
+        <!-- inter category -->
+        <div class="push-ups intermediate">
+          <div class="group category">Intermediate</div>
+            <div class="intermediate-box box">
+              
+            </div>
+        </div>
+        <div class="push-ups advanced">
+          <div class="group category">Advanced</div>
+            <div class="advanced-box box">
+              
+            </div>
+        </div>
+        <div class="push-ups expert">
+          <div class="group category">Expert</div>
+            <div class="expert-box box">
+              <div>Coming soon...</div>
+            </div>
+        </div> 
+        
+      <div class="spacer"></div>
+    </div>
+    </div>
+    </div>
+    <div class="step step-3 ">
+      <div class="title">
+        <h2>How many total reps?</h2>
+      </div>
+     <div class="form-group final">
+      <button type="button" class="reps-btn btnf"  value="100">100</button>
+      <button type="button" class="reps-btn btnf" value="150">150</button>
+      <input type="input" class="reps-input" placeholder="custom " style="font-family:Arial, FontAwesome;">
+     </div>
+     
+     <button type="button" id="button" class="prev-btn"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
+     <button type="submit" id="button" class="submit-btn">Create challenge</button>
+    </div>
+    
+   </form>
+  
+   </div><div class="modal hidden">
+    <div class="modal-txt">
+  
+    </div>
+    <button type="button" id="button" class="prev-btn"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
+    <button type="button" id="button" class="next-btn">Next</button>
+  </div>
+</section>
+  <script src="https://kit.fontawesome.com/d711adfb58.js" crossorigin="anonymous"></script>
+  <script src="createChallenge.js"></script>
+</body>
+</html>

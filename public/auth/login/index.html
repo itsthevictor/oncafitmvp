@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="login.css">
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/css/main.css">
+ <title>Login</title>
+</head>
+<body>
+ <div class="container">
+  <div class="auth-card login-card card">
+   <div class="el-title">
+    <h2>Log into your account</h2>
+   </div>
+   <form class="login-form">
+    <div class="el-inputs">
+     <div class="input-email input-child">
+      <input type="text" id="email-input" placeholder="email">
+     </div>
+     <div class="input-pass input-child">
+      <input type="password" id="password-input" placeholder="password">
+     </div>
+    </div>
+    <div class="buttons">
+     <button type="submit" class="login-button">Log in</button>
+    </div>
+    <div class="error-message hidden"></div>
+    <div class="option">
+      
+        <p>Don't have an account? </p>
+      
+     
+        <button type="button" class="switch" onclick="location.href='/auth/register'">Sign up</button>
+   
+      
+    </div>
+    <div class="option">
+    
+        <p>Forgot your password? </p>
+
+   
+        <button type="button" class="switch" onclick="location.href='/auth/forgot-password/'">Reset Password</button>
+     
+    </div>
+  
+   </form>
+  </div>
+ </div>
+
+ <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+ <script src="login.js"></script>
+</body>
+</html>

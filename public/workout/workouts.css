@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ 
+}
+
+:root{
+   --accent: #28ca9f;
+   --itemback: #1a1c1c;
+   --background: #000000;
+   --text: #d3f0e7;
+}
+
+body{
+    background-color: var(--background);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   
+}
+
+#back{
+   
+    float: right;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu-box {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 25px;
+    height: 3px;
+    background-color: var(--accent);
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    transform: translate(0, 8px) rotate(-45deg);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    transform: translate(0, -8px) rotate(45deg);
+  }
+
+a{
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+
+}
+a::after{
+    color: var(--accent);
+}
+
+.title{
+    margin-top: 15px;
+    width: 100%;
+    text-align: left;
+    color: #28ca9f;
+    text-align: center;
+    padding: 15px;
+    font-family: 'Bebas Neue';
+    letter-spacing: 0.075em;
+}
+
+.container{
+    margin-top: 10px;
+    width: 95%;
+    margin-left: 2.5%;
+    padding: 5px;
+    color: var(--text);
+}
+.workouts{
+    margin-top: 20px;
+}
+
+.category{
+    font-family: 'Bebas Neue';
+    font-size: 24px;
+    color: grey;
+    /* background-color: #1a1c1c; */
+    text-align: left;
+    padding: 15px;
+  letter-spacing: 0.075em;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content:space-around;
+    flex-wrap: wrap;
+
+}
+
+input{
+    background-color: var(--itemback);
+    padding: 15px;
+    border-radius: 5px;
+    color: var(--text);
+    margin-bottom: 10px;
+    color: grey;
+    /* min-width: 200px; */
+    /* flex-grow: 1; */
+    border: 2px solid var(--itemback);
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+
+.active{
+    color: var(--text);
+    border-color: var(--accent);
+}
+
+@media only screen and (max-width: 400px) {
+    .container{
+        width: auto;
+    }
+
+    .box{
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+    }
+    .btn2 {
+      width: 90%;
+    }
+  }
+  

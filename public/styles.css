@@ -1,0 +1,243 @@
+.title h2{
+    /* margin-top: 2.5em; */
+    width: 100%;
+    text-align: left;
+    color: var(--accent);
+    text-align: left;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5vw;
+    font-weight: 400;
+    
+}
+
+h2 {
+    font-size: 1.25em;
+}
+
+.card {
+    width: 99%;
+    margin-left: 0.5%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: flex-start;
+    /* min-width: 75vw; */
+    color: var(--text);
+   
+    /* background-color: var(--itemback); */
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, 50%);
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    /* border: 1.5px solid var(--accent); */
+  }
+
+.dashboard {
+    width: 100%;
+    min-width: 300px;
+    color: var(--itemback);
+    padding: 25px;
+    font-weight: 700;
+
+    margin: 0;
+    position: absolute;
+    /* top: 39%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+}
+
+.el-title {
+    margin-bottom: 15px;
+    word-wrap: normal;
+    color: var(--accent);
+}
+
+.input-child {
+    margin-bottom: 15px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-between;
+}
+
+.navbar {
+    width: 100%;
+    margin: auto;
+    background-color: var(--itemback);
+    padding: 0.5vw;
+}
+
+.navbar-items {
+    max-width: 666px;
+    margin: auto;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.logout {
+    /* float: right; */
+    font-weight: 500;
+    cursor: pointer;
+    background-color: var(--itemback);
+    color: var(--iteminactive);
+}
+
+.logout:hover {
+    color: var(--accent);
+    background: var(--itemback);
+    border: none;
+    font-weight: 600;
+}
+
+.logout:active {
+    color: var(--background);
+    background: var(--accent);
+    border: none;
+    font-weight: 600;
+}
+
+.home {
+    /* float: right; */
+    font-weight: 500;
+    cursor: pointer;
+    background-color: var(--itemback);
+    color: var(--accent);
+}
+
+.home:hover {
+    color: var(--accent);
+    background: var(--background);
+    border: none;
+    font-weight: 600;
+}
+
+.home:active {
+    color: var(--background);
+    background: var(--accent);
+    border: none;
+    font-weight: 600;
+}
+input {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    width: 100%;
+}
+
+button {
+    font-size: 1rem;
+    font-weight: 550;
+    cursor: pointer;
+    border: none;
+    padding: 10px 15px 10px 15px;
+    border-radius: 5px;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.b-login {
+    color: var(--background);
+    background-color: var(--accent);
+    /* border: 1px solid #28ca9f; */
+}
+
+.b-signup {
+    background-color: var(--background);
+    color: var(--accent);
+}
+
+.wel {
+    color: var(--accent); 
+}
+
+.btn {
+    background-color: var(--itemback);
+    color: var(--accent);
+    border: 2px solid var(--itemback);
+}
+
+.btn:hover {
+    background-color: var(--itemback);
+    color: var(--accent);
+    border: 2px solid var(--itemback);
+}
+
+.btn:active {
+    background-color: var(--itemback);
+    color: var(--accent);
+    border: 2px solid var(--accent);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+    width: 100%;
+}
+
+.one {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--itemback);
+    border-radius: 5px;
+    margin-bottom: 0.35rem;
+    padding: 0.45rem;
+    flex:auto 1 1;
+}
+
+.chal {
+    min-width: 220px;
+    /* order:1; */
+    font-size: 1rem;
+    padding-left: 0.5em;
+}
+
+
+.challenges {
+    width: 100%;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+
+.actions {
+    display: flex;
+}
+
+
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    font-size: inherit;
+    font-size: 1rem;
+    font-weight: 550;
+    cursor: pointer;
+    border: none;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 5px;
+
+    color: var(--accent);
+    
+}
+
+a.rep-btn{
+    background-color: var(--background);
+    color: var(--accent);
+}

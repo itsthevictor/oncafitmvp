@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --accent: #1fe9b3;
+    --itemback: #171F28;
+    --background: #16161d;
+    --text: #eaf3f0;
+    --iteminactive: #195C54;
+ }
+ 
+ body{
+     background-color: var(--background);
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+ }
+
+.container { 
+    height:100vh;
+    position: relative;
+  }
+  
+.card {
+    width: 390px;
+    color: var(--text);
+    padding: 45px;
+    background-color: var(--itemback);
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    border: 1px solid #28ca9f;
+  }
+
+
+.el-title{
+    margin-bottom: 22.5px;
+    word-wrap: normal;
+}
+
+.input-child{
+    margin-bottom: 22.5px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-between;
+}
+
+input{
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    width: 100%;
+}
+
+button{
+    font-size: 1rem;
+    font-weight: 550;
+    cursor: pointer;
+    border: none;
+    padding: 10px 15px 10px 15px;
+    border-radius: 5px;
+}
+
+.hidden{
+    display: none;
+}
+
+
+.b-login{
+    color: var(--background);
+    background-color: var(--accent);
+    
+    /* border: 1px solid #28ca9f; */
+}
+
+.b-signup{
+    background-color: var(--background);
+    color: var(--accent);
+}
+
+.option{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+}
+
+.buttons{
+width:100%;
+margin-bottom: 22.5px;
+}
+
+.signup-button{
+width:100%;
+color: var(--background);
+background-color: var(--accent);
+/* border: 1px solid #28ca9f; */
+}
+
+h4{
+  font-weight: 400;
+}
+
+.login-button{
+    width:100%;
+    color: var(--background);
+    background-color: var(--accent);
+    /* border: 1px solid #28ca9f; */
+}
+
+
+a{
+color:var(--accent);
+text-decoration: none;
+}
+
+
+.switch, .le-switch{
+    display: inline-block;
+    background-color: var(--itemback);
+    border: none;
+    padding: 0;
+    color:var(--accent);
+    text-decoration: none;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 720px) {
+    body{
+        background-color: var(--itemback);
+    }
+    .card {
+        border: none
+      }
+  }
+.error-message{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0.25rem;
+    width: auto;
+    text-align: center;
+    background: rgb(227, 193, 198);
+    color: rgb(159, 33, 33);
+    border-radius: 5px;
+}
+
+.success-message {
+
+    padding: 0.25rem;
+    width: auto;
+    text-align: center;
+    background: rgb(193, 227, 211);
+    color: var(--iteminactive);
+    border-radius: 5px;
+
+}
