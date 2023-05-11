@@ -33,7 +33,7 @@ const register = async (req, res) => {
     role,
     verificationToken,
   });
-  const origin = "http://localhost:3000";
+  const origin = "https://onca-fit-mvp.cyclic.app";
   await sendVerificationEmail({
     name: user.name,
     email: user.email,
@@ -138,7 +138,7 @@ const forgotPassword = async (req, res) => {
   const user = await User.findOne({ email });
 
   if (user) {
-    const origin = "http://localhost:3000";
+    const origin = "https://onca-fit-mvp.cyclic.app";
     const passwordToken = crypto.randomBytes(70).toString("hex");
     // send email
     await sendResetPasswordEmail({
