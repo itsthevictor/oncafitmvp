@@ -1,5 +1,7 @@
 .title h2{
-    /* margin-top: 2.5em; */
+    /* font-family: 'Zilla Slab', serif; */
+    font-size: larger;
+    /* font-style: italic; */
     width: 100%;
     text-align: left;
     color: var(--accent);

@@ -16,10 +16,12 @@ header{
 }
 
 .title{
+    font-family: 'Zilla Slab', serif;
     width: 100%;
     text-align: left;
     color: var(--accent);
-    font-size: large;
+    font-size: 1.25rem;
+    font-weight: 400;
     font-style: italic;
 }
 
@@ -38,10 +40,10 @@ a::after{
     color: blanchedalmond;
 } */
 
-H1, H2, H3, H4{
+/* H1, H2, H3, H4{
     font-family: 'Bebas Neue', cursive;
     color: var(--accent);
-}
+} */
 
 .container{
    
