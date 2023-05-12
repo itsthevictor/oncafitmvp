@@ -60,8 +60,8 @@ button.submit-btn {
 
 button.prev-btn {
    float: left;
-   background-color: var(--accent);
-   color: var(--background);
+   background-color: var(--background);
+   color: var(--accent);
    text-align: left;
 }
 
@@ -173,12 +173,13 @@ h2{
 }
 
 input {
-   background-color: var(--itemback);
+   background-color: var(--iteminactive);
    padding: 15px;
    border-radius: 5px;
    color: var(--text);
-   margin-bottom: 10px;
+   margin-bottom: 1rem;
    color: var(--text-inactive);
+   font-size: 1em;
    /* min-width: 200px; */
    /* flex-grow: 1; */
    border: 2px solid var(--itemback);
@@ -214,9 +215,10 @@ input {
    margin-bottom: 0.5em;
 }
 
-.active {
+.activeOption {
    color: var(--text);
    border-color: var(--accent);
+   background: var(--itemback);
 }
 
 @media only screen and (max-width: 710px) {

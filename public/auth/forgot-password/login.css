@@ -21,19 +21,21 @@
 .container { 
     height:100vh;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
   }
   
 .card {
-    width: 390px;
+    width: 50vw;
+    max-width: 390px;
     color: var(--text);
     padding: 45px;
     background-color: var(--itemback);
-    margin: 0;
+    margin: auto;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+  
     border-radius: 5px;
     border: 1px solid #28ca9f;
   }
@@ -140,10 +142,11 @@ text-decoration: none;
 
 @media screen and (max-width: 720px) {
     body{
-        background-color: var(--itemback);
+        background-color: var(--itemback) !important;
     }
     .card {
-        border: none
+        border: none;
+        width: 85vw;
       }
   }
 .error-message{

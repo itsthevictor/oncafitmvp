@@ -165,6 +165,14 @@ function changeStep(btn) {
         spacer.classList.remove("hidden");
       });
     });
+    theInputs.forEach(function (input) {
+      input.addEventListener("click", function () {
+        theInputs.forEach(function (input) {
+          input.classList.remove("activeOption");
+        });
+        this.classList.add("activeOption");
+      });
+    });
   });
 })();
 

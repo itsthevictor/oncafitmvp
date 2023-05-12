@@ -16,6 +16,10 @@ if (location.search) {
 }
 console.log(params);
 
+var myFunction = function () {
+  window.open("/auth/login", "self");
+};
+
 loginFormDOM.addEventListener("submit", async (e) => {
   e.preventDefault();
   console.log("credentials sent");
@@ -32,8 +36,15 @@ loginFormDOM.addEventListener("submit", async (e) => {
           console.log("success");
           loginCard.classList.add("hidden");
           console.log(res);
-          document.querySelector(".success-message").textContent = res.data.msg;
-          document.querySelector(".success-message").classList.remove("hidden");
+          const card = document.createElement("div");
+          document.querySelector(".container").append(card);
+          card.classList.add("card");
+          card.textContent = `Password changed`;
+          const btn = document.createElement("button");
+          btn.classList.add("button");
+          btn.textContent = "Please Login";
+          btn.onclick = myFunction;
+          card.append(btn);
         }
         console.log(res);
       })
