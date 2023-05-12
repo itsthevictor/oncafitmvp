@@ -14,6 +14,7 @@ const modalTxt = document.querySelector(".modal-txt");
 const spacer = document.querySelector(".spacer");
 const btns = document.querySelectorAll(".btnf");
 const repsInput = document.querySelector(".reps-input");
+const your = document.querySelector(".your");
 
 const challenge = {
   type: {
@@ -180,12 +181,16 @@ btns.forEach((btn) => {
   btn.addEventListener("click", () => {
     challenge.reps = btn.textContent;
     repsInput.value = null;
+    your.textContent = `your challenge: ${challenge.reps} ${challenge.exercise}`;
+    your.classList.remove("hidden");
   });
 });
 
 document.querySelector(".reps-input").addEventListener("input", () => {
   challenge.reps = repsInput.value;
   // console.log(challenge);
+  your.textContent = `your challenge: ${challenge.reps} ${challenge.exercise}`;
+  your.classList.remove("hidden");
 });
 
 form.addEventListener("submit", async (e) => {

@@ -24,7 +24,7 @@
   }
   
 .card {
-    width: 50vw;
+    width: 100vw;
     max-width: 390px;
     color: var(--text);
     padding: 45px;
@@ -146,8 +146,8 @@ text-decoration: none;
     }
     .card {
         border: none;
-        width: 85vw;
-        margin: auto;
+        padding: 0;
+        max-width: 85vw;
       }
   }
 .error-message{

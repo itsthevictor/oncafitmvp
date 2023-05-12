@@ -2,7 +2,7 @@ const accordionContent = document.querySelectorAll(".accordion-content");
 
 async function logOut() {
   await fetch("api/v1/auth/logout");
-  window.open("/auth/", "_self");
+  window.open("/auth/login/", "_self");
 }
 accordionContent.forEach((item, index) => {
   let header = item.querySelector("header");

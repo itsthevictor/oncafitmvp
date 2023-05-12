@@ -1,4 +1,6 @@
-
+body {
+  background-color: var(--background) !important;
+}
 
 
 .the-title{
@@ -24,7 +26,7 @@
   color: var(--accent);
   text-align: left;
   letter-spacing: 0.05em;
-  margin-bottom: 1.5vw;
+  margin-bottom: 1.5vh;
   font-weight: 400;
 
 }
@@ -33,7 +35,7 @@ h2 {
   font-size: 1.25em;
 }
 .container {
- height: 95vh;
+ height: 100vh;
  width: 100vw;
  margin: auto;
  display: flex;
@@ -131,7 +133,7 @@ font-size: 1.1rem;
 }
 
 .info {
-  /* float: right; */
+   float: right;
   font-weight: 500;
   cursor: pointer;
   background-color: var(--itemback);
@@ -160,12 +162,7 @@ button {
   border-radius: 5px;
 }
 
-.line{
-  color: var(--itemback);
-  background: #171F28;
-  border-color: var(--itemback);
-  border: 1px dashed;
-}
+
 
 @media only screen and (max-width: 600px) {
 
@@ -177,4 +174,10 @@ button {
   .accordion{
     padding: 0.5em;
   }
+}
+
+.navbar {
+ 
+  padding-top: 0 1vh 4vh 1vh !important;
+
 }
