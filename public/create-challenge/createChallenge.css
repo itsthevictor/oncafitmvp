@@ -67,7 +67,7 @@ button.prev-btn {
 
 button.next-btn{  
    background-color: var(--accent);
-    color: var(--itemback);
+    color: var(--itemback) !important;
 }
 
 
