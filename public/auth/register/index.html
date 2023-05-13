@@ -1,49 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>onca fit mvp</title>
-    <link rel="stylesheet" href="register.css">
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/main.css">
-</head>
-<body>
- <div class="container">
-    <div class="success-message hidden"></div>
-  <div class="signup-card card ">
-   <div class="el-title"><h2>Register</h2></div>
-   <form class="form signup-form">
-   <div class="el-inputs">
-    <div class="input-name input-child">
-        <input type="text" id="name-signup" placeholder="name">
-    </div>
-    <div class="input-email input-child">
-        <input type="text" id="email-signup" placeholder="email">
-    </div>
-    <div class="input-pass input-child">
-        <input type="password" id="password-signup" placeholder="password">
-    </div>
-   </div>
-    <div class="buttons">              
-            <button type="submit" class="signup-button">Sign up</button>             
-    </div >
-    
-    <div class="error-message hidden"></div>
-     <div class="option">
-      <div class="option-1">
-          <h4>Already have an account? </h4>
-      </div>
-      <div class="option-2"><button type="button" class="le-switch" onclick="location.href='/auth/login'">Log in</button></div>
-     </div>
-      
-   </form>
-  </div>
- 
-</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="register.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>onca fit mvp</title>
+  <link rel="stylesheet" href="register.css">
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="success-message hidden"></div>
+    <div class="signup-card card ">
+      <div class="el-title">
+        <h2>Register</h2>
+      </div>
+      <form class="form signup-form">
+        <div class="el-inputs">
+          <div class="input-name input-child">
+            <input type="text" id="name-signup" placeholder="name">
+          </div>
+          <div class="input-email input-child">
+            <input type="text" id="email-signup" placeholder="email">
+          </div>
+          <div class="input-pass input-child">
+            <input type="password" id="password-signup" placeholder="password">
+          </div>
+          <div class="input-w input-child">
+            <div class="w-nominal"><input type="number" id="w-signup" placeholder="bodyweight"></div>
+            <div class="w-unit">
+              <input id="toggle-on" class="toggle toggle-left" name="toggle" value="kg" type="radio" checked>
+              <label for="toggle-on" class="btn btnon">kg</label>
+              <input id="toggle-off" class="toggle toggle-right" name="toggle" value=""  type="radio">
+              <label for="toggle-off" class="btn btnoff">lb</label>
+            </div>
+
+          </div>
+        </div>
+        <div class="buttons">
+          <button type="submit" class="signup-button">Sign up</button>
+        </div>
+
+        <div class="error-message hidden"></div>
+        <div class="option">
+          <div class="option-1">
+            <h4>Already have an account? </h4>
+          </div>
+          <div class="option-2"><button type="button" class="le-switch" onclick="location.href='/auth/login'">Log
+              in</button></div>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="register.js"></script>
 </body>
+
 </html>

@@ -3,41 +3,32 @@ const signupCard = document.querySelector(".signup-card");
 const nameSignup = document.getElementById("name-signup");
 const emailSignup = document.getElementById("email-signup");
 const passwordSignup = document.getElementById("password-signup");
+const weightSignup = document.getElementById("w-signup");
+const toggleKg = document.getElementById("toggle-on");
+const toggleLb = document.getElementById("toggle-off");
 
-// signupFormDOM.addEventListener("submit", async (e) => {
-//   e.preventDefault();
-//   const name = nameSignup.value;
-//   const email = emailSignup.value;
-//   const password = passwordSignup.value;
-//   //   if (!emailInput.value || !passwordInput.value) return;
-//   const user = { email, name, password };
-//   try {
-//     const response = await fetch("/api/v1/auth/register", {
-//       method: "POST",
-//       headers: {
-//         "Content-type": "application/json",
-//       },
-//       body: JSON.stringify(user),
-//     });
+let unit = "kg";
+console.log(toggleKg.value, toggleLb.value);
 
-//     if (response.status === 201) {
-//       nameSignup.value = "";
-//       emailSignup.value = "";
-//       passwordSignup.value = "";
-//       window.open("/", "_self");
-//     }
-//   } catch (error) {
-//     console.log(error);
-//   }
-// });
+toggleKg.addEventListener("click", () => {
+  unit = "kg";
+  console.log(unit);
+});
+
+toggleLb.addEventListener("click", () => {
+  unit = "lb";
+  console.log(unit);
+});
 
 signupFormDOM.addEventListener("submit", async (e) => {
   e.preventDefault();
+  console.log(weightSignup.value);
   const name = nameSignup.value;
   const email = emailSignup.value;
   const password = passwordSignup.value;
+  const weight = weightSignup.value;
   //   if (!emailInput.value || !passwordInput.value) return;
-  const user = { email, name, password };
+  const user = { email, name, password, weight, unit };
   try {
     axios
       .post("/api/v1/auth/register", user)

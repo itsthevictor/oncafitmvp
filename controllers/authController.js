@@ -16,7 +16,7 @@ const crypto = require("crypto");
 // Controllers functionality
 const register = async (req, res) => {
   console.log("request got");
-  const { email, name, password } = req.body;
+  const { email, name, password, weight, unit } = req.body;
   const emailAlready = await User.findOne({ email });
   if (emailAlready) {
     throw new CustomError.BadRequestError("email already exists");
@@ -31,9 +31,11 @@ const register = async (req, res) => {
     email,
     password,
     role,
+    weight,
+    unit,
     verificationToken,
   });
-  const origin = "https://onca-fit-mvp.cyclic.app";
+  const origin = "http://localhost:3000";
   await sendVerificationEmail({
     name: user.name,
     email: user.email,
@@ -138,7 +140,7 @@ const forgotPassword = async (req, res) => {
   const user = await User.findOne({ email });
 
   if (user) {
-    const origin = "https://onca-fit-mvp.cyclic.app";
+    const origin = "http://localhost:3000";
     const passwordToken = crypto.randomBytes(70).toString("hex");
     // send email
     await sendResetPasswordEmail({

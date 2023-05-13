@@ -32,11 +32,6 @@ let userProfile = {
   weight: "64",
 };
 
-let exercise = {
-  name: "Pseudo Planche Push-ups",
-  weightDist: "0.7",
-};
-
 let counter = 1;
 let sum = 0;
 let reps;
@@ -49,8 +44,22 @@ let seshSets = {};
 let setNo;
 let labels = [];
 let workout = {};
+let activeWight;
 
-hWeight.textContent = `${userProfile.weight * exercise.weightDist} kg`;
+getUser();
+async function getUser() {
+  const response = await fetch("/api/v1/users/showMe");
+  const data = await response.json();
+  if (!data.user) {
+    window.open("/auth/register/", "_self");
+  } else {
+    // const { weight, unit } = data.user;
+    console.log(data);
+    hWeight.textContent = `${data.user.weight * 0.6} ${data.user.unit}`;
+    activeWight = data.user.weight * 0.6;
+  }
+}
+// hWeight.textContent = `${user.weight * 0.6} ${user.unit}`;
 
 const queryString = window.location.search;
 id = queryString.substring(queryString.length - 24);
@@ -105,6 +114,7 @@ async function getChallenge() {
     }
   }
 }
+
 console.log(target);
 btn.addEventListener("click", () => {
   reps = parseInt(input.value);
@@ -122,7 +132,9 @@ btn.addEventListener("click", () => {
   progValue.style.color = "#30D589";
   hReps.textContent = sum;
   hSets.textContent = counter - 1;
-  volume = (userProfile.weight * exercise.weightDist * sum).toFixed(0);
+
+  // Volume
+  volume = (activeWight * sum).toFixed(0);
   hVolume.textContent = `${volume} kg`;
 
   if (sum >= target) {
