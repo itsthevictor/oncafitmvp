@@ -183,6 +183,7 @@ btns.forEach((btn) => {
     repsInput.value = null;
     your.textContent = `Your Challenge: ${challenge.reps} ${challenge.exercise}`;
     your.classList.remove("hidden");
+    btn.classList.add("activeOption");
   });
 });
 

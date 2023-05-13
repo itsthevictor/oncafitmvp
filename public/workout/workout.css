@@ -305,13 +305,15 @@ transform: translate(0, -8px) rotate(45deg);
 
 .summary{
 color: var(--text);
-background-color: var(--iteminactive);
+background-color: var(--background);
 padding: 12.5px;
-margin-top: 5px;
+/* margin-top: 5px; */
 width: 100%;
 text-align: left;
 border-radius: 5px;
 color: var(--text);
+    margin-bottom: 0.4rem;
+        margin-top: -0.02rem;
 
 }
 

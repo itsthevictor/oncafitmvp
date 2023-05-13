@@ -3,6 +3,7 @@ const input = document.getElementById("input");
 const set = document.getElementById("set");
 const circularProgress = document.querySelector(".circular-progress");
 const progValue = document.querySelector(".prog");
+const progBar = document.querySelector(".progress-bar");
 const hVolume = document.getElementById("h-volume");
 const hWeight = document.getElementById("h-weight");
 const hSets = document.getElementById("h-sets");
@@ -13,10 +14,18 @@ const ctx = document.getElementById("summaryChart");
 const title = document.querySelector(".title");
 const done = document.querySelector(".done-btn");
 const bind = document.querySelector(".bind");
+const counterBox = document.querySelector(".counter-box");
 
 function myFunction(x) {
   x.classList.toggle("change");
 }
+
+var redirect = function () {
+  window.open("/create-challenge", "self");
+};
+var redirectHome = function () {
+  window.open("/", "self");
+};
 
 let userProfile = {
   name: "Victor",
@@ -85,6 +94,7 @@ async function getChallenge() {
       or.style.marginBottom = `0.75rem`;
       or.style.color = `var(--accent)`;
       cta2.textContent = "create a new challenge";
+      cta2.onclick = redirect;
       already.append(msg);
       already.append(actions);
       actions.append(or);
@@ -117,15 +127,21 @@ btn.addEventListener("click", () => {
 
   if (sum >= target) {
     alert("workout complete!");
+    progBar.style.padding = "0";
     btn.disabled = true;
     input.disabled = true;
-    btn.style.background = "#195C54";
-    btn.style.borderColor = "#195C54";
+
+    const cta2 = document.createElement("button");
+    cta2.textContent = "done";
+    cta2.onclick = redirectHome;
+    document.querySelector(".complete").append(cta2);
     summary.textContent = `Summary: ${sets}`;
     summary.classList.remove("hidden");
     circularProgress.classList.add("hidden");
+    canvas.style.width = "100%";
     canvas.classList.remove("hidden");
-    done.classList.remove("hidden");
+
+    counterBox.classList.add("hidden");
     const data = { sets };
     for (let i = 0; i < sets.length; i++) {
       labels[i] = `set ${i + 1}`;

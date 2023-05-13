@@ -69,7 +69,8 @@ button.prev-btn {
 }
 
 button.next-btn {
-  background-color: var(--accent)
+  background-color: var(--accent);
+  color: var(--itemback);
 }
 
 
@@ -226,7 +227,7 @@ input {
 .activeOption {
   color: var(--text);
   border-color: var(--accent);
-  background: var(--iteminactive);
+  background: var(--itemalt);
 }
 
 @media only screen and (max-width: 710px) {
@@ -309,7 +310,7 @@ button.option-btn:hover {
 }
 
 .your{
-  background: var(--iteminactive);
+  background: var(--itemalt);
   padding: 15px;
   font-size: 1.25rem;
   width: 100%;
