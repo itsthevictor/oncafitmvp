@@ -237,6 +237,17 @@ input[type=number]:focus {
   border-color: var(--accent);
 }
 
+#rinput:focus {
+    border-color: (--accent);
+}
+#rinput:active {
+    border-color: (--accent);
+}
+#rinput::selection {
+    border-color: (--accent);
+}
+
+
 input, 
 button{
     width: 100%;

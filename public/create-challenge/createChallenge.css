@@ -29,7 +29,7 @@ section {
   margin: auto;
   position: absolute;
   top: 50%;
-  left: 47.5%;
+  left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
@@ -73,7 +73,9 @@ button.next-btn {
   color: var(--itemback);
 }
 
-
+button.submit-btn{
+  color: var(--itemback);
+}
 
 .parent {
   display: flex;
@@ -121,15 +123,8 @@ button.option-btn:hover {
   text-align: left;
   color: var(--accent);
   text-align: left;
-
-  
   margin-bottom: 1.5vw;
 }
-
-/* h2 {
-  font-size: 2.5em;
-} */
-
 
 .workouts {
   margin-top: 20px;
@@ -139,9 +134,7 @@ button.option-btn:hover {
   font-family: 'Bebas Neue';
   font-size: 24px;
   color: var(--text-inactive);
-  /* background-color: #1a1c1c; */
   text-align: left;
-  /* padding: 15px; */
   letter-spacing: 0.075em;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
@@ -271,6 +264,11 @@ input.reps-input {
 input.reps-input:active {
   color: var(--text) !important;
   border: 2px solid var(--accent) !important;
+}
+
+.reps-input:focus {
+  color: var(--text) !important;
+  border-color: var(--accent) !important;
 }
 
 input.reps-input::selection {
