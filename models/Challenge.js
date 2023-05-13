@@ -23,6 +23,9 @@ const ChallengeSchema = new mongoose.Schema(
       default: false,
     },
     workouts: [],
+    weightDist: {
+      type: Number,
+    },
   },
   { timestamps: true }
 );

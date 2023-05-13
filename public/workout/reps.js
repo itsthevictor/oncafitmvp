@@ -27,11 +27,6 @@ var redirectHome = function () {
   window.open("/", "self");
 };
 
-let userProfile = {
-  name: "Victor",
-  weight: "64",
-};
-
 let counter = 1;
 let sum = 0;
 let reps;
@@ -44,7 +39,8 @@ let seshSets = {};
 let setNo;
 let labels = [];
 let workout = {};
-let activeWight;
+let activeWeight;
+let unit;
 
 getUser();
 async function getUser() {
@@ -55,8 +51,10 @@ async function getUser() {
   } else {
     // const { weight, unit } = data.user;
     console.log(data);
-    hWeight.textContent = `${data.user.weight * 0.6} ${data.user.unit}`;
-    activeWight = data.user.weight * 0.6;
+    activeWeight = data.user.weight.toFixed(1);
+    // hWeight.textContent = `${activeWeight} ${data.user.unit}`;
+
+    unit = data.user.unit;
   }
 }
 // hWeight.textContent = `${user.weight * 0.6} ${user.unit}`;
@@ -75,6 +73,11 @@ async function getChallenge() {
     console.log("no data");
   } else {
     target = challenge.reps;
+    const { weightDist } = challenge;
+    console.log(challenge);
+    console.log(weightDist);
+    activeWeight = (activeWeight * weightDist).toFixed(1);
+    hWeight.textContent = `${activeWeight} ${unit}`;
     title.textContent = challenge.exercise;
     let { date } = challenge.workouts.pop();
     // get last workout date and current date
@@ -134,8 +137,8 @@ btn.addEventListener("click", () => {
   hSets.textContent = counter - 1;
 
   // Volume
-  volume = (activeWight * sum).toFixed(0);
-  hVolume.textContent = `${volume} kg`;
+  volume = (activeWeight * sum).toFixed(0);
+  hVolume.textContent = `${volume} ${unit}`;
 
   if (sum >= target) {
     alert("workout complete!");

@@ -4,13 +4,14 @@ const CustomError = require("../errors");
 
 const createChallenge = async (req, res) => {
   const user = req.user;
-  const { exercise, reps } = req.body;
+  const { exercise, reps, weightDist } = req.body;
   if (!exercise || !reps) {
     throw new CustomError("please provide exercise and reps targeted");
   }
   const challenge = await Challenge.create({
     exercise: exercise,
     reps: reps,
+    weightDist: weightDist,
     user: user.userId,
   });
   res.status(StatusCodes.CREATED).json(challenge);

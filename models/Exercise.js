@@ -24,6 +24,9 @@ const ExerciseSchema = new mongoose.Schema({
     required: [true, "please provide instructions"],
     maxlength: 1500,
   },
+  weightDist: {
+    type: Number,
+  },
 });
 
 module.exports = mongoose.model("Exercise", ExerciseSchema);

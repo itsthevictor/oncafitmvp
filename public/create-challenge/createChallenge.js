@@ -26,6 +26,9 @@ const challenge = {
   reps: {
     type: Number,
   },
+  weightDist: {
+    type: Number,
+  },
 };
 
 let beginnerE = [];
@@ -109,6 +112,7 @@ nextBtn.forEach((button) => {
 prevBtn.forEach((button) => {
   button.addEventListener("click", () => {
     changeStep("prev");
+    your.classList.add("hidden");
   });
 });
 
@@ -154,6 +158,9 @@ function changeStep(btn) {
         modalTxt.replaceChildren();
         let yourExercise = allExes.filter((p) => p.name === `${text}`);
         let instructions = yourExercise[0].instructions;
+        challenge.weightDist = yourExercise[0].weightDist;
+        console.log(yourExercise[0]);
+        console.log(challenge);
         var newerElement = document.createElement("div");
         yourExercise = allExes.filter((p) => p.name === `${text}`);
         instructions = yourExercise[0].instructions;
