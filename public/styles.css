@@ -1,5 +1,11 @@
-body{
+/* body{
     background-color: var(--background) !important;
+} */
+
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--itemback) !important;
 }
 .container{
     height: 95vh;
@@ -134,7 +140,7 @@ button {
 }
 
 .btn {
-    background-color: var(--iteminactive);
+    background-color: var(--background);
     color: var(--accent);
     /* border: 2px solid var(--itemback); */
 }
@@ -159,14 +165,14 @@ button {
 }
 
 .one {
-    height:3rem;
+    height:5vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--itemback);
+    background: var(--background);
     border-radius: 5px;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.5rem;
     padding: 0.45rem;
     flex:auto 1 1;
 }

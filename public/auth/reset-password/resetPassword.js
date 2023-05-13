@@ -37,9 +37,12 @@ loginFormDOM.addEventListener("submit", async (e) => {
           loginCard.classList.add("hidden");
           console.log(res);
           const card = document.createElement("div");
+          const text = document.createElement("div");
+          text.classList.add("text");
+          card.append(text);
           document.querySelector(".container").append(card);
           card.classList.add("card");
-          card.textContent = `Password changed`;
+          text.textContent = `Password changed`;
           const btn = document.createElement("button");
           btn.classList.add("button");
           btn.textContent = "Please Login";

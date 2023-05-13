@@ -80,28 +80,30 @@ button.next-btn {
   flex-wrap: wrap;
   align-items: start;
   justify-content: space-between;
+  gap: 10px;
 }
 
-.parent-2 {
+/* .parent-2 {
   margin-top: 45px;
-}
+} */
 
 .option {
   font-size: 1.5rem;
   min-width: 120px;
-  margin-bottom: 15px;
-  margin-top: 15px;
+  /* margin-bottom: 15px;
+  margin-top: 15px; */
+  flex-grow: 1;
 }
 
 button.option-btn {
   padding: 15px 45px;
-
+ 
   color: var(--text-inactive);
   background-color: var(--background);
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 1.25rem;
+  width: 100%;
   min-width: 150px;
-  /* font-weight: 600; */
   cursor: pointer;
   border: 2px solid var(--itemback);
 }
@@ -153,7 +155,7 @@ button.option-btn:hover {
 }
 
 .btn2 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   min-width: 290px;
 }
 
@@ -247,27 +249,9 @@ input {
   }
 }
 
-/* .final{
-   display: flex;
-} */
-/* .reps-btn {
-  font-size: 1.5rem;
-  background-color: var(--itemback);
-  padding: 15px;
-  border-radius: 5px;
-  color: var(--text);
-  margin-bottom: 1rem;
-  min-width: 250px;
-  width: 100%;
-  font-weight: 600;
-  color: var(--text-inactive);
-  min-width: 200px; 
-   flex-grow: 1;
-  border: 2px solid var(--itemback);
-  cursor: pointer;
-} */
 
 input.reps-input {
+ 
   text-align: center;
   font-weight: 600;
   font-size: 1.25rem;
@@ -275,7 +259,7 @@ input.reps-input {
   padding: 15px !important;
   border-radius: 5px;
   color: var(--text) !important;
-  margin-bottom: 1rem;
+  margin: 1rem 0 1rem 0;
   min-width: 250px;
   width: 100%;
   border: 2px solid var(--background)!important;
@@ -295,6 +279,7 @@ input.reps-input::selection {
 
 button.reps-btn {
   padding: 15px 45px;
+  flex-grow: 1;
 
   color: var(--text-inactive);
   background-color: var(--background);
@@ -310,22 +295,29 @@ button.option-btn:hover {
   color: var(--text);
   background-color: var(--background);
   border: 2px solid var(--accent);
+
 }
 
 .given-options{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 5px;
+  justify-content: space-around;
+
+  gap: 10px;
 }
 
 .your{
   background: var(--iteminactive);
   padding: 15px;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   width: 100%;
   text-align: center;
   border-radius: 5px;
   border: 2px solid var(--accent);
+}
+
+.btnf1{
+  padding: 15px 51px !important;
 }

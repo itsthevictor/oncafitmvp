@@ -181,7 +181,7 @@ btns.forEach((btn) => {
   btn.addEventListener("click", () => {
     challenge.reps = btn.textContent;
     repsInput.value = null;
-    your.textContent = `your challenge: ${challenge.reps} ${challenge.exercise}`;
+    your.textContent = `Your Challenge: ${challenge.reps} ${challenge.exercise}`;
     your.classList.remove("hidden");
   });
 });
@@ -189,7 +189,7 @@ btns.forEach((btn) => {
 document.querySelector(".reps-input").addEventListener("input", () => {
   challenge.reps = repsInput.value;
   // console.log(challenge);
-  your.textContent = `your challenge: ${challenge.reps} ${challenge.exercise}`;
+  your.textContent = `Your Challenge: ${challenge.reps} ${challenge.exercise}`;
   your.classList.remove("hidden");
 });
 
