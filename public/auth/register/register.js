@@ -4,8 +4,8 @@ const nameSignup = document.getElementById("name-signup");
 const emailSignup = document.getElementById("email-signup");
 const passwordSignup = document.getElementById("password-signup");
 const weightSignup = document.getElementById("w-signup");
-const toggleKg = document.getElementById("toggle-on");
-const toggleLb = document.getElementById("toggle-off");
+const toggleKg = document.getElementById("radio-one");
+const toggleLb = document.getElementById("radio-two");
 
 let unit = "kg";
 console.log(toggleKg.value, toggleLb.value);
