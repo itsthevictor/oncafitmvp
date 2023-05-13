@@ -39,6 +39,10 @@
     flex-shrink: 2;
   
   }
+   .w-unit{
+      flex-grow: 1;
+      max-width: 25%;
+    }
 }
 
 
