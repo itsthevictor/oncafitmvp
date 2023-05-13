@@ -124,23 +124,14 @@ button {
     opacity: 0;
 }
 
-.b-login {
-    color: var(--background);
-    background-color: var(--accent);
-    /* border: 1px solid #28ca9f; */
-}
 
-.b-signup {
-    background-color: var(--background);
-    color: var(--accent);
-}
 
 .wel {
     color: var(--accent); 
 }
 
 .btn {
-    background-color: var(--background);
+    background-color: var(--itemback);
     color: var(--accent);
     /* border: 2px solid var(--itemback); */
 }
@@ -165,7 +156,7 @@ button {
 }
 
 .one {
-    height:3rem;
+    height:2.75rem;
     width: 100%;
     display: flex;
     align-items: center;
