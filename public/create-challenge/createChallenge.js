@@ -43,8 +43,10 @@ optionBtn.forEach((button) => {
     beginnerBox.replaceChildren();
     intermediateBox.replaceChildren();
     advancedBox.replaceChildren();
-    const text = button.textContent.toLowerCase();
-    challenge.type = text;
+    // const text = button.textContent.toLowerCase();
+
+    challenge.type = button.value;
+    console.log(challenge);
     const response = await fetch("/api/v1/exercises/", {
       method: "GET",
       headers: {
@@ -52,12 +54,15 @@ optionBtn.forEach((button) => {
       },
     });
     const data = await response.json();
+
     const allEx = data.exercises;
+    console.log(allEx);
     const selectedType = allEx.filter((p) =>
-      p.branch.includes(`${challenge.type}`)
+      p.type.includes(`${challenge.type}`)
     );
 
     allExes = selectedType;
+    console.log(allExes);
     const beginnerExercises = selectedType.filter((p) =>
       p.level.includes("beg")
     );
