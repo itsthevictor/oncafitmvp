@@ -8,7 +8,7 @@ const ExerciseSchema = new mongoose.Schema({
   },
   type: {
     type: String,
-    enum: ["push", "pull", "legs", "core"],
+    enum: ["push", "pull", "legs", "core & posture"],
   },
   branch: {
     type: String,
