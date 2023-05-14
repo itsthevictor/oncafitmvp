@@ -27,6 +27,12 @@ var redirectHome = function () {
   window.open("/", "self");
 };
 
+document.getElementById("input").addEventListener("keypress", function (evt) {
+  if ((evt.which != 8 && evt.which != 0 && evt.which < 48) || evt.which > 57) {
+    evt.preventDefault();
+  }
+});
+
 let counter = 1;
 let sum = 0;
 let reps;
@@ -43,7 +49,6 @@ let activeWeight;
 let unit;
 
 const startTime = new Date(Date.now());
-console.log(startTime);
 
 getUser();
 async function getUser() {
@@ -81,6 +86,9 @@ async function getChallenge() {
     activeWeight = (activeWeight * weightDist).toFixed(1);
     hWeight.textContent = `${activeWeight} ${unit}`;
     title.textContent = challenge.exercise;
+    if (!challenge.workouts.pop()) {
+      return;
+    }
     let { date } = challenge.workouts.pop();
     // get last workout date and current date
     const wDate = new Date(date);
@@ -120,13 +128,11 @@ async function getChallenge() {
   }
 }
 
-console.log(target);
 btn.addEventListener("click", () => {
   if (!input.value) {
     return;
   }
   reps = parseInt(input.value);
-
   input.value = "";
   sum = parseInt(sum) + reps;
   counter++;
@@ -167,7 +173,6 @@ btn.addEventListener("click", () => {
       labels[i] = `set ${i + 1}`;
     }
 
-    console.log(sets);
     // console.log(labels);
     const summaryChart = new Chart(ctx, {
       type: "line",
@@ -205,7 +210,7 @@ btn.addEventListener("click", () => {
     ).toFixed(2);
     workout.duration = duration;
     workout.volume = volume;
-    console.log(workout);
+
     fetch(`/api/v1/challenges/${id}`, {
       method: "PATCH",
       headers: {
