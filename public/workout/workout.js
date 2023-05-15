@@ -47,6 +47,8 @@ let labels = [];
 let workout = {};
 let activeWeight;
 let unit;
+let prog = [];
+let chartGoal = [];
 
 const startTime = new Date(Date.now());
 
@@ -86,42 +88,45 @@ async function getChallenge() {
     activeWeight = (activeWeight * weightDist).toFixed(1);
     hWeight.textContent = `${activeWeight} ${unit}`;
     title.textContent = challenge.exercise;
+    // if (!challenge.workouts.pop()) {
+    //   return;
+    // }
     let { date } = challenge.workouts.pop();
     // get last workout date and current date
     const wDate = new Date(date);
     const newDate = new Date();
     // check if have already performed this exercise today
-    if (newDate.setHours(0, 0, 0, 0) == wDate.setHours(0, 0, 0, 0)) {
-      // if workout already today on this challenge the message an bac to dashboard button or create new challenge
-      bind.classList.add("hidden");
-      const already = document.createElement("div");
-      const msg = document.createElement("div");
-      const actions = document.createElement("div");
-      const or = document.createElement("div");
-      const cta1 = document.createElement("button");
-      const cta2 = document.createElement("button");
-      document.querySelector(".container").append(already);
-      done.innerHTML = `<i class="fa-solid fa-xmark fa-lg"></i>`;
-      done.style.background = `var(--itemback)`;
-      done.style.border = `none`;
-      done.style.color = `var(--accent)`;
-      msg.style.textAlign = `center`;
-      msg.style.marginBottom = `0.5rem`;
-      msg.innerHTML = `<h3>It looks like you've already nailed this challenge today. Come back tomorrow to workout again</h3>`;
-      or.textContent = `or`;
-      or.style.textAlign = `center`;
-      or.style.marginBottom = `0.75rem`;
-      or.style.color = `var(--accent)`;
-      cta2.textContent = "create a new challenge";
-      cta2.onclick = redirect;
-      already.append(msg);
-      already.append(actions);
-      actions.append(or);
-      actions.append(cta2);
-      circularProgress.style.background = "var(--accent)";
-      progValue.style.color = "var(--accent)";
-      done.classList.remove("hidden");
-    }
+    // if (newDate.setHours(0, 0, 0, 0) == wDate.setHours(0, 0, 0, 0)) {
+    //   // if workout already today on this challenge the message an bac to dashboard button or create new challenge
+    //   bind.classList.add("hidden");
+    //   const already = document.createElement("div");
+    //   const msg = document.createElement("div");
+    //   const actions = document.createElement("div");
+    //   const or = document.createElement("div");
+    //   const cta1 = document.createElement("button");
+    //   const cta2 = document.createElement("button");
+    //   document.querySelector(".container").append(already);
+    //   done.innerHTML = `<i class="fa-solid fa-xmark fa-lg"></i>`;
+    //   done.style.background = `var(--itemback)`;
+    //   done.style.border = `none`;
+    //   done.style.color = `var(--accent)`;
+    //   msg.style.textAlign = `center`;
+    //   msg.style.marginBottom = `0.5rem`;
+    //   msg.innerHTML = `<h3>It looks like you've already nailed this challenge today. Come back tomorrow to workout again</h3>`;
+    //   or.textContent = `or`;
+    //   or.style.textAlign = `center`;
+    //   or.style.marginBottom = `0.75rem`;
+    //   or.style.color = `var(--accent)`;
+    //   cta2.textContent = "create a new challenge";
+    //   cta2.onclick = redirect;
+    //   already.append(msg);
+    //   already.append(actions);
+    //   actions.append(or);
+    //   actions.append(cta2);
+    //   circularProgress.style.background = "var(--accent)";
+    //   progValue.style.color = "var(--accent)";
+    //   done.classList.remove("hidden");
+    // }
   }
 }
 
@@ -135,7 +140,15 @@ btn.addEventListener("click", () => {
   counter++;
   set.textContent = `Set ${counter}`;
   sets.push(reps);
-
+  prog[0] = sets[0];
+  for (let i = 1; i < sets.length; i++) {
+    prog[i] = prog[i - 1] + sets[i];
+    console.log(prog);
+  }
+  for (let j = 0; j <= sets.length; j++) {
+    chartGoal[j] = target;
+  }
+  console.log(chartGoal);
   progress = ((sum / target) * 100).toFixed(0);
   progValue.textContent = `${progress}%`;
   circle = (progress / 100) * 360;
@@ -162,6 +175,8 @@ btn.addEventListener("click", () => {
     summary.classList.remove("hidden");
     circularProgress.classList.add("hidden");
     canvas.style.width = "100%";
+    canvas.style.height = "100%";
+    canvas.style.padding = "0";
     canvas.classList.remove("hidden");
 
     counterBox.classList.add("hidden");
@@ -170,18 +185,38 @@ btn.addEventListener("click", () => {
       labels[i] = `set ${i + 1}`;
     }
 
-    // console.log(labels);
     const summaryChart = new Chart(ctx, {
-      type: "line",
       data: {
         labels: labels,
         datasets: [
           {
+            type: "line",
+            label: "Progress",
+            data: prog,
+            borderWidth: 3,
+            backgroundColor: "#30D589",
+            borderColor: "#30D589",
+            pointRadius: 0,
+          },
+          {
+            type: "bar",
+            label: "Sets",
             data: sets,
             borderWidth: 2,
-            backgroundColor: "#28ca9f",
-            borderColor: "#28ca9f",
-            borderRadius: 2.5,
+            backgroundColor: `#003844`,
+            borderColor: "#003844",
+            borderRadius: 4,
+          },
+          {
+            type: "line",
+            label: "Target",
+            data: chartGoal,
+            borderWidth: 2,
+            backgroundColor: "#f4f4f4",
+            borderColor: "#f4f4f4",
+            borderRadius: 2,
+            pointRadius: 0,
+            borderDash: [5, 5],
           },
         ],
       },
@@ -191,12 +226,14 @@ btn.addEventListener("click", () => {
             beginAtZero: true,
           },
         },
+        maintainAspectRatio: false,
+        responsive: true,
         plugins: {
           legend: false,
         },
       },
     });
-
+    // document.getElementById("summaryChart").style.height = "70vh";
     //send data to server and insert to database
     const endTime = new Date(Date.now());
     workout.date = endTime;
