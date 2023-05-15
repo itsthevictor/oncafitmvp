@@ -95,7 +95,7 @@ async function getChallenge() {
     // get last workout date and current date
     const wDate = new Date(date);
     const newDate = new Date();
-    check if have already performed this exercise today
+    //     check if have already performed this exercise today
     if (newDate.setHours(0, 0, 0, 0) == wDate.setHours(0, 0, 0, 0)) {
       // if workout already today on this challenge the message an bac to dashboard button or create new challenge
       bind.classList.add("hidden");
