@@ -86,9 +86,6 @@ async function getChallenge() {
     activeWeight = (activeWeight * weightDist).toFixed(1);
     hWeight.textContent = `${activeWeight} ${unit}`;
     title.textContent = challenge.exercise;
-    if (!challenge.workouts.pop()) {
-      return;
-    }
     let { date } = challenge.workouts.pop();
     // get last workout date and current date
     const wDate = new Date(date);
