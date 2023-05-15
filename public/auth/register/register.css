@@ -280,10 +280,8 @@ input[type="radio"].toggle {
 .switch-field input {
   position: absolute !important;
   clip: rect(0, 0, 0, 0);
-  /* height: 1px;
-  width: 1px; */
+  width:auto;
   border: 0;
-  overflow: hidden;
 }
 
 .switch-field label {
