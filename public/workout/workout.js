@@ -95,38 +95,38 @@ async function getChallenge() {
     // get last workout date and current date
     const wDate = new Date(date);
     const newDate = new Date();
-    // check if have already performed this exercise today
-    // if (newDate.setHours(0, 0, 0, 0) == wDate.setHours(0, 0, 0, 0)) {
-    //   // if workout already today on this challenge the message an bac to dashboard button or create new challenge
-    //   bind.classList.add("hidden");
-    //   const already = document.createElement("div");
-    //   const msg = document.createElement("div");
-    //   const actions = document.createElement("div");
-    //   const or = document.createElement("div");
-    //   const cta1 = document.createElement("button");
-    //   const cta2 = document.createElement("button");
-    //   document.querySelector(".container").append(already);
-    //   done.innerHTML = `<i class="fa-solid fa-xmark fa-lg"></i>`;
-    //   done.style.background = `var(--itemback)`;
-    //   done.style.border = `none`;
-    //   done.style.color = `var(--accent)`;
-    //   msg.style.textAlign = `center`;
-    //   msg.style.marginBottom = `0.5rem`;
-    //   msg.innerHTML = `<h3>It looks like you've already nailed this challenge today. Come back tomorrow to workout again</h3>`;
-    //   or.textContent = `or`;
-    //   or.style.textAlign = `center`;
-    //   or.style.marginBottom = `0.75rem`;
-    //   or.style.color = `var(--accent)`;
-    //   cta2.textContent = "create a new challenge";
-    //   cta2.onclick = redirect;
-    //   already.append(msg);
-    //   already.append(actions);
-    //   actions.append(or);
-    //   actions.append(cta2);
-    //   circularProgress.style.background = "var(--accent)";
-    //   progValue.style.color = "var(--accent)";
-    //   done.classList.remove("hidden");
-    // }
+    check if have already performed this exercise today
+    if (newDate.setHours(0, 0, 0, 0) == wDate.setHours(0, 0, 0, 0)) {
+      // if workout already today on this challenge the message an bac to dashboard button or create new challenge
+      bind.classList.add("hidden");
+      const already = document.createElement("div");
+      const msg = document.createElement("div");
+      const actions = document.createElement("div");
+      const or = document.createElement("div");
+      const cta1 = document.createElement("button");
+      const cta2 = document.createElement("button");
+      document.querySelector(".container").append(already);
+      done.innerHTML = `<i class="fa-solid fa-xmark fa-lg"></i>`;
+      done.style.background = `var(--itemback)`;
+      done.style.border = `none`;
+      done.style.color = `var(--accent)`;
+      msg.style.textAlign = `center`;
+      msg.style.marginBottom = `0.5rem`;
+      msg.innerHTML = `<h3>It looks like you've already nailed this challenge today. Come back tomorrow to workout again</h3>`;
+      or.textContent = `or`;
+      or.style.textAlign = `center`;
+      or.style.marginBottom = `0.75rem`;
+      or.style.color = `var(--accent)`;
+      cta2.textContent = "create a new challenge";
+      cta2.onclick = redirect;
+      already.append(msg);
+      already.append(actions);
+      actions.append(or);
+      actions.append(cta2);
+      circularProgress.style.background = "var(--accent)";
+      progValue.style.color = "var(--accent)";
+      done.classList.remove("hidden");
+    }
   }
 }
 
@@ -162,7 +162,7 @@ btn.addEventListener("click", () => {
   hVolume.textContent = `${volume} ${unit}`;
 
   if (sum >= target) {
-    alert("workout complete!");
+//     alert("workout complete!");
     progBar.style.padding = "0";
     btn.disabled = true;
     input.disabled = true;
