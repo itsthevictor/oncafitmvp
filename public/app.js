@@ -32,7 +32,7 @@ async function getAllMyChallenges() {
   for (item of challenges) {
     const chal = document.createElement("div");
     chal.classList.add("chal");
-    chal.textContent = `${item.exercise}`;
+    chal.textContent = `${item.reps} ${item.exercise}`;
     const one = document.createElement("div");
     one.classList.add("one");
     var actions = document.createElement("div");
