@@ -16,6 +16,7 @@ const done = document.querySelector(".done-btn");
 const bind = document.querySelector(".bind");
 const counterBox = document.querySelector(".counter-box");
 
+let startTime;
 function myFunction(x) {
   x.classList.toggle("change");
 }
@@ -25,6 +26,11 @@ var redirect = function () {
 };
 var redirectHome = function () {
   window.open("/", "self");
+};
+var startWorkout = function () {
+  bind.classList.remove("hidden");
+  document.querySelector(".warmup").classList.add("hidden");
+  startTime = new Date(Date.now());
 };
 
 document.getElementById("input").addEventListener("keypress", function (evt) {
@@ -49,8 +55,6 @@ let activeWeight;
 let unit;
 let prog = [];
 let chartGoal = [];
-
-const startTime = new Date(Date.now());
 
 getUser();
 async function getUser() {
@@ -95,10 +99,11 @@ async function getChallenge() {
     // get last workout date and current date
     const wDate = new Date(date);
     const newDate = new Date();
-    //     check if have already performed this exercise today
+    // check if have already performed this exercise today
     if (newDate.setHours(0, 0, 0, 0) == wDate.setHours(0, 0, 0, 0)) {
       // if workout already today on this challenge the message an bac to dashboard button or create new challenge
-      bind.classList.add("hidden");
+      // document.querySelector(".warmup").classList.add("hidden");
+      // bind.classList.add("hidden");
       const already = document.createElement("div");
       const msg = document.createElement("div");
       const actions = document.createElement("div");
@@ -126,7 +131,9 @@ async function getChallenge() {
       circularProgress.style.background = "var(--accent)";
       progValue.style.color = "var(--accent)";
       done.classList.remove("hidden");
+      document.querySelector(".warmup").classList.add("hidden");
     }
+
     const warmup = document.createElement("div");
     warmup.classList.add("warmup");
     const warmupMsg = document.createElement("div");
@@ -180,7 +187,7 @@ btn.addEventListener("click", () => {
   hVolume.textContent = `${volume} ${unit}`;
 
   if (sum >= target) {
-//     alert("workout complete!");
+    alert("workout complete!");
     progBar.style.padding = "0";
     btn.disabled = true;
     input.disabled = true;
@@ -198,11 +205,10 @@ btn.addEventListener("click", () => {
     canvas.classList.remove("hidden");
 
     counterBox.classList.add("hidden");
-    const data = { sets };
     for (let i = 0; i < sets.length; i++) {
       labels[i] = `set ${i + 1}`;
     }
-
+    // chart data
     const summaryChart = new Chart(ctx, {
       data: {
         labels: labels,
@@ -251,8 +257,7 @@ btn.addEventListener("click", () => {
         },
       },
     });
-    // document.getElementById("summaryChart").style.height = "70vh";
-    //send data to server and insert to database
+
     const endTime = new Date(Date.now());
     workout.date = endTime;
     workout.sets = sets;
