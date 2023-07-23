@@ -29,8 +29,9 @@ header{
 .done-btn{
     /* font-size: 1rem; */
     padding: 4px 10px 4px 10px;
-    /* background-color: var(--itemback);
-    color: var(--accent); */
+    background-color: var(--itemback);
+    color: var(--accent);
+    border: none;
 }
 
 /* a{
@@ -334,6 +335,7 @@ display: none;
 
 .canvas{
     min-width: 50vw;
+    min-height: 80vw;
 }
 
 
