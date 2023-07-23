@@ -127,6 +127,24 @@ async function getChallenge() {
       progValue.style.color = "var(--accent)";
       done.classList.remove("hidden");
     }
+    const warmup = document.createElement("div");
+    warmup.classList.add("warmup");
+    const warmupMsg = document.createElement("div");
+    const warmupCta = document.createElement("div");
+    const wCta = document.createElement("button");
+    document.querySelector(".container").append(warmup);
+    warmupMsg.innerHTML = `<h3>Please take propper time to warm up and get those joints rolling so you can have a particularly stellar workout. When you're ready hit the start button and crush your challenge!
+    Push for as many reps as you can even if you've already hit your target mid set. You got this.</h3>`;
+    wCta.textContent = "START";
+    warmupMsg.style.marginBottom = "2.5vh";
+    wCta.onclick = startWorkout;
+    warmup.append(warmupMsg);
+    warmup.append(warmupCta);
+    warmupCta.append(wCta);
+    warmupMsg.style.color = `var(--accent)`;
+    warmupMsg.style.backgroundColor = `var(--background)`;
+    warmupMsg.style.padding = "1.5rem";
+    warmupMsg.style.borderRadius = "5px";
   }
 }
 
